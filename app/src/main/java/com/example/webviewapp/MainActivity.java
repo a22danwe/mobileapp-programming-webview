@@ -33,10 +33,8 @@ public class MainActivity extends AppCompatActivity {
         myWebView=findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.loadUrl("www.his.se");
 
-        // WebSettings webSettings = myWebView.getSettings();
-        //webSettings.setJavaScriptEnabled(true);
+
 
 
         /*
@@ -82,12 +80,14 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
             Log.d("==>","Will display external web page");
+            myWebView.loadUrl("https://www.his.se/");
             showExternalWebPage();
             return true;
         }
 
         if (id == R.id.action_internal_web) {
             Log.d("==>","Will display internal web page");
+            myWebView.loadUrl("file:///android_asset/about.html");
             showInternalWebPage();
             return true;
         }
